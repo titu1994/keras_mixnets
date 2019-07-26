@@ -76,7 +76,7 @@ class UploadCommand(Command):
         try:
             self.status('Removing build artifacts...')
             rmtree(os.path.join(base_path, 'build'))
-            rmtree(os.path.join(base_path, 'keras_efficientnets.egg-info'))
+            rmtree(os.path.join(base_path, '{}.egg-info'.format(PACKAGE_NAME)))
         except OSError:
             pass
 

@@ -9,6 +9,24 @@ Code ported from the official codebase [https://github.com/tensorflow/tpu/blob/m
 
 From the above paper, a Mixed Convolution is a group of convolutions with varying filter sizes. The paper suggests that [3x3, 5x5, 7x7] can be used safely without any loss in performance (and possible increase in performance), while a 9x9 or 11x11 may degrade performance if used without proper architecture search.
 
+# Installation
+
+## From PyPI:
+
+```$ pip install keras_mixnets```
+
+## From Master branch:
+
+```
+pip install git+https://github.com/titu1994/keras_mixnets.git
+
+OR
+
+git clone https://github.com/titu1994/keras_mixnets.git
+cd keras_mixnets
+pip install .
+```
+
 # Usage
 
 Due to the use of Model Subclassing, the keras model built **cannot* be deserialized using `load_model`. You must build the model each time. tf.keras supports writing Layers which have additional Layers within them, but as Keras itself does not support it yet, these models cannot be deserialized using `load_model`.
