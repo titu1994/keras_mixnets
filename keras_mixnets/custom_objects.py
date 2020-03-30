@@ -104,7 +104,7 @@ class DropConnect(layers.Layer):
         return dict(list(base_config.items()) + list(config.items()))
 
 
-class GroupConvolution(models.Model):
+class GroupConvolution(layers.Layer):
 
     def __init__(self, filters, kernels, groups,
                  type='conv', conv_kwargs=None,
